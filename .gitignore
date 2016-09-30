@@ -1,3 +1,5 @@
+.idea
 bower_components
 config.yml
 config/settings_data.json
+node_modules/
