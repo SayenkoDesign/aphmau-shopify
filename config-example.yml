@@ -1,0 +1,7 @@
+development:
+  store: "example.myshopify.com"
+  theme_id: "live"
+  bucket_size: 40
+  refill_rate: 2
+  ignore_files:
+    - "config/settings_data.json"
