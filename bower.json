@@ -1,0 +1,26 @@
+{
+  "name": "shopify",
+  "authors": [
+    "Robert M. Parker <robert@sayenkodesign.com>"
+  ],
+  "description": "shopify theme",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "font-awesome": "^4.6.3",
+    "foundation-sites": "^6.2.3",
+    "slick-carousel": "^1.6.0",
+    "fancybox": "^2.1.5",
+    "imagesloaded": "^4.1.1",
+    "isotope": "^3.0.1"
+  }
+}
