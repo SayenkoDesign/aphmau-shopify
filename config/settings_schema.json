@@ -1,19 +1,63 @@
 [
   {
-    "name": "Welcome",
+    "name": "Header",
+    "icon": "header",
     "settings": [
       {
-        "type": "paragraph",
-        "content": "Theme settings allow designers to provide an easy way for any user to customize the look and feel of their shop without having to delve into HTML or CSS code. Please see our [help page on theme settings](http:\/\/docs.shopify.com\/themes\/theme-templates\/settings) to learn more about how you can make your theme customizable."
-      }
-    ]
-  },
-  {
-    "name": "Example setting",
-    "settings": [
+        "type": "image",
+        "id": "logo.png",
+        "label": "Logo",
+        "max-width": 160
+      },
       {
-        "type": "header",
-        "content": "Example option"
+        "type": "image",
+        "id": "logo-small.png",
+        "label": "Mobile Logo",
+        "max-width": 96,
+        "max-height": 96
+      },
+      {
+        "type": "image",
+        "id": "favicon.png",
+        "label": "Favicon",
+        "max-width": 128,
+        "max-height": 128
+      },
+      {
+        "type":      "text",
+        "id":        "facebook",
+        "label":     "Facebook",
+        "default":   "http://www.facebook.com/aphmau"
+      },
+      {
+        "type":      "text",
+        "id":        "twitter",
+        "label":     "Twitter",
+        "default":   "https://twitter.com/_Aphmau_"
+      },
+      {
+        "type":      "text",
+        "id":        "instagram",
+        "label":     "Instagram",
+        "default":   "https://instagram.com/Aphmau_/"
+      },
+      {
+        "type":      "text",
+        "id":        "tumblr",
+        "label":     "Tumblr",
+        "default":   "http://aphmau.tumblr.com/"
+      },
+      {
+        "type":      "text",
+        "id":        "witch",
+        "label":     "Twitch",
+        "default":   "http://www.twitch.tv/aphmau"
+      },
+      {
+        "type":      "text",
+        "id":        "youtube",
+        "label":     "Youtube",
+        "default":   "https://www.youtube.com/AphmauGaming"
       }
     ]
   }
