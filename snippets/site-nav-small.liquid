@@ -37,7 +37,7 @@ A word on sub-categories: Shopify manages sub-categories using product tags: htt
       {% elsif link.title == "videos" or link.title == "Videos" or link.title == "VIDEOS" %}
         <i class="fa fa-play"></i>
       {% endif %}
-      <span>{{ link.title }}</span>
+      {{ link.title }}
     </a>
 
     {% if has_sub_menu or has_sub_categories %}

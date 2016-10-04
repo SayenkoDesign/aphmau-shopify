@@ -1,26 +1,43 @@
 [
+
+  {
+    "name": "Global",
+    "settings": [
+      {
+        "type":      "text",
+        "id":        "wordpress",
+        "label":     "WordPress URL",
+        "default":   "http://aphmau.wpengine.com/"
+      },
+      {
+        "type":      "image",
+        "id":        "background.png",
+        "label":     "Background Image"
+      }
+    ]
+  },
   {
     "name": "Header",
     "icon": "header",
     "settings": [
       {
-        "type": "image",
-        "id": "logo.png",
-        "label": "Logo",
-        "max-width": 160
+        "type":       "image",
+        "id":         "logo.png",
+        "label":      "Logo",
+        "max-width":  160
       },
       {
-        "type": "image",
-        "id": "logo-small.png",
-        "label": "Mobile Logo",
-        "max-width": 96,
+        "type":       "image",
+        "id":         "logo-small.png",
+        "label":      "Mobile Logo",
+        "max-width":  96,
         "max-height": 96
       },
       {
-        "type": "image",
-        "id": "favicon.png",
-        "label": "Favicon",
-        "max-width": 128,
+        "type":       "image",
+        "id":         "favicon.png",
+        "label":      "Favicon",
+        "max-width":  128,
         "max-height": 128
       },
       {
@@ -49,7 +66,7 @@
       },
       {
         "type":      "text",
-        "id":        "witch",
+        "id":        "twitch",
         "label":     "Twitch",
         "default":   "http://www.twitch.tv/aphmau"
       },
@@ -58,6 +75,17 @@
         "id":        "youtube",
         "label":     "Youtube",
         "default":   "https://www.youtube.com/AphmauGaming"
+      }
+    ]
+  },
+  {
+    "name": "Footer",
+    "icon": "footer",
+    "settings": [
+      {
+        "type":       "textarea",
+        "id":         "footer",
+        "label":      "Footer Content"
       }
     ]
   }

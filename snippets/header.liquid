@@ -1,0 +1,65 @@
+<header data-sticky-container>
+    <div class="top-bar" data-sticky data-top-anchor="150" data-sticky-on="small">
+        <div id="large-menu" class="hide-for-small-only">
+            <div class="row align-middle large-collapse">
+                <div class="shrink columns">
+                    <ul class="dropdown menu" data-dropdown-menu>
+                        <li><a href="{{ settings.wordpress }}" class="home"> {{ 'logo.png' | asset_url | img_tag: shop.name }}</a></li>
+                        {% include 'site-nav' %}
+                    </ul>
+                </div>
+                <div class="shrink columns">
+                    <ul class="social horizontal menu">
+                        {% if settings.facebook %}
+                            <li><a href="{{ settings.facebook }}" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                        {% endif %}
+                        {% if settings.twitter %}
+                            <li><a href="{{ settings.twitter }}" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                        {% endif %}
+                        {% if settings.instagram %}
+                            <li><a href="{{ settings.instagram }}" target="_blank"><i class="fa fa-instagram"></i></a></li>
+                        {% endif %}
+                        {% if settings.tumblr %}
+                            <li><a href="{{ settings.tumblr }}" target="_blank"><i class="fa fa-tumblr"></i></a></li>
+                        {% endif %}
+                        {% if settings.twitch %}
+                            <li><a href="{{ settings.twitch }}" target="_blank"><i class="fa fa-twitch"></i></a></li>
+                        {% endif %}
+                        {% if settings.youtube %}
+                            <li><a href="{{ settings.youtube }}" target="_blank"><i class="fa fa-youtube"></i></a></li>
+                        {% endif %}
+                    </ul>
+                    <form role="search" method="get" id="searchform" class="searchform" action="{{ settings.wordpress }}">
+                        <input type="hidden" name="post_type" value="videos" />
+                        <div class="input-group">
+                            <input class="input-group-field" type="text" name="s" placeholder="Search Videos">
+                            <div class="input-group-button">
+                                <button type="submit" class="secondary button"><i class="fa fa-search"></i></button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="small-menu-bar" data-responsive-toggle="small-menu" data-hide-for="medium">
+            <a class="" data-toggle><i class="fa fa-bars"></i></a>
+            <a href="{{ wordpress }}" class="home">{{ "logo-small.png" | asset_url | img_tag: shop.name }}</a>
+        </div>
+        <div class="small-menu hide-for-medium" id="small-menu">
+            <div class="">
+                <ul class="vertical menu">
+                    {% include 'site-nav-small' %}
+                    {% for link in SP.ACF.get_field('menu', 'option') %}
+                        <li>
+                            <a href="{% if link.type == "internal" %}{{ link.page }}{% else %}{{ link.url }}{% endif %}">
+                                <i class="fa {{ link.icon }}"></i>
+                                {{ link.text }}
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>
