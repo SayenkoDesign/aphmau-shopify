@@ -1,0 +1,30 @@
+<div class="row align-center">
+    <div class="small-12 medium-5 large-4">
+        <h1>Log In</h1>
+        {% form 'customer_login' %}
+            <label for="customer_email">Email Address</label>
+            <input type="email" name="customer[email]" />
+            <label for="customer_password">Password</label>
+            <input type="password" name="customer[password]" />
+            {{ form.errors | default_errors }}
+            <input type="submit" value="Sign In" class="button"/>
+            <a id="forgot" class="secondary button">Forgot Password</a>
+        {% endform %}
+
+
+        <div class="hidden" id="forgot-frm">
+            {% form 'recover_customer_password' %}
+                <label for="customer_email">Email Address</label>
+                <input type="email" name="customer[email]" />
+                {{ form.errors | default_errors }}
+                <input type="submit" value="Recover Password" class="button"/>
+            {% endform %}
+        </div>
+        <script>
+            jQuery('#forgot').on('click', function(){
+                console.log('revealing');
+                jQuery('#forgot-frm').slideToggle();
+            });
+        </script>
+    </div>
+</div>

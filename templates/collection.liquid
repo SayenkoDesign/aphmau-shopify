@@ -12,16 +12,23 @@
     Collection sorting. Needs the JavaScript that is at the bottom of this file.
   {% endcomment %}
   {% if collection.products_count > 1 %}
-    <select class="sort-by right">
-      <option value="manual">Featured</option>
-      <option value="price-ascending">Price: Low to High</option>
-      <option value="price-descending">Price: Hight to Low</option>
-      <option value="title-ascending">A-Z</option>
-      <option value="title-descending">Z-A</option>
-      <option value="created-ascending">Oldest to Newest</option>
-      <option value="created-descending">Newest to Oldest</option>
-      <option value="best-selling">Best Selling</option>
-    </select>
+    <div class="row medium-centered large-centered">
+      <div class="small-12 medium-6 large-4 columns">
+        <label for="">
+          Sort By:
+          <select class="sort-by right">
+            <option value="manual">Featured</option>
+            <option value="price-ascending">Price: Low to High</option>
+            <option value="price-descending">Price: Hight to Low</option>
+            <option value="title-ascending">A-Z</option>
+            <option value="title-descending">Z-A</option>
+            <option value="created-ascending">Oldest to Newest</option>
+            <option value="created-descending">Newest to Oldest</option>
+            <option value="best-selling">Best Selling</option>
+          </select>
+        </label>
+      </div>
+    </div>
   {% endif %}
 
   {% comment %}
@@ -54,13 +61,15 @@
     {{ collection.description }}
   {% endif %}
 
-  {% for product in collection.products %}
-    <ul>
-      {% include 'product-item' %}
-    </ul>
-  {% else %}
-    <p>There are no products in this view.</p>
-  {% endfor %}
+  <div class="row small-up-2 medium-up-3 large-up-4">
+    {% for product in collection.products %}
+        <div class="column">
+          {% include 'product-item' %}
+        </div>
+    {% else %}
+      <p>There are no products in this view.</p>
+    {% endfor %}
+  </div>
 
   {% if paginate.pages > 1 %}
     {{ paginate | default_pagination }}

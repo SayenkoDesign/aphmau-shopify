@@ -5,3 +5,123 @@
 @import "partials/header";
 @import "partials/footer";
 @import "partials/layouts";
+
+.shadow {
+  box-shadow: 0 0 8px 0 rgba(0,0,0,0.5);
+  max-width: $global-width;
+  margin: 0 auto $global-margin*2 auto;
+}
+
+.errors {
+  color: $alert-color;
+}
+
+.badge.accent {
+  margin-left: $global-padding/2;
+  margin-top: 2px;
+  font-weight: bold;
+}
+
+.account {
+  vertical-align: top;
+  th {
+    vertical-align: top;
+    text-align: left;
+    padding-left: 0;
+  }
+}
+label.middle {
+  @include breakpoint(small only) {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+// fancybox
+.fancybox-overlay {
+  background-image: none;
+  background-color: rgba($primary-color, 0.8);
+}
+.fancybox-skin {
+  background-color: $white;
+  border-radius: 0;
+  padding: 0 !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 1) !important;
+}
+#fancybox-loading, .fancybox-close, .fancybox-prev span, .fancybox-next span {
+  background: none;
+  font-family: "FontAwesome";
+  color: $body-font-color;
+  font-size: rem-calc(48px);
+}
+.fancybox-nav span {
+  visibility: visible;
+  opacity: 0.75;
+}
+.fancybox-nav:hover span {
+    opacity: 1;
+}
+.fancybox-prev span::after {
+  content: "\f053";
+}
+.fancybox-next span::after {
+  content: "\f054";
+}
+
+// hidden defined by shopify
+.hidden {
+  display: none;
+}
+
+
+// flare share
+body .flare {
+  background-color: $secondary-color;
+}
+body .flare[data-flare-skin="modern"] .flare-total {
+  font-family: $header-font-family !important;
+}
+body .flare[data-flare-skin="modern"] .flare-total > strong {
+  font-family: $header-font-family !important;
+}
+
+// slick
+.slick-prev, .slick-next {
+  width: auto;
+  height: auto;
+  z-index: 1;
+}
+.slick-prev {
+  left: 0;
+}
+.slick-next {
+  right: 0;
+}
+.slick-prev::before, .slick-next::before {
+  font-family: "FontAwesome";
+  color: $body-font-color;
+  font-size: rem-calc(48px);
+}
+.slick-next::before {
+  content: "\f054";
+}
+.slick-prev::before {
+  content: "\f053";
+}
+
+// products
+.product-title-row {
+  justify-content: space-between;
+}
+
+// sharethis
+.stButton {
+  margin: 0 !important;
+}
+.share {
+  text-align: center;
+  h3 {
+    margin-bottom: 0;
+    color: scale-color($secondary-color, $lightness: -24%)
+  }
+}

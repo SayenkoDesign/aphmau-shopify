@@ -1212,7 +1212,7 @@ h2 {
   font-size: 1.25rem; }
 
 h3 {
-  font-size: 1.1875rem; }
+  font-size: 1.25rem; }
 
 h4 {
   font-size: 1.125rem; }
@@ -1225,15 +1225,15 @@ h6 {
 
 @media screen and (min-width: 47.5em) {
   h1 {
-    font-size: 1.6875rem; }
+    font-size: 1.75rem; }
   h2 {
-    font-size: 2.5rem; }
+    font-size: 1.5rem; }
   h3 {
-    font-size: 1.9375rem; }
+    font-size: 1.375rem; }
   h4 {
-    font-size: 1.5625rem; }
+    font-size: 1.125rem; }
   h5 {
-    font-size: 1.25rem; }
+    font-size: 1.0625rem; }
   h6 {
     font-size: 1rem; } }
 
@@ -3275,15 +3275,15 @@ table {
   table thead,
   table tbody,
   table tfoot {
-    border: 1px solid #f1f1f1;
-    background-color: #fefefe; }
+    border: 1px solid rgba(13, 13, 13, 0);
+    background-color: transparent; }
   table caption {
     font-weight: bold;
     padding: 0.5rem 0.625rem 0.625rem; }
   table thead,
   table tfoot {
-    background: #f8f8f8;
-    color: #5f3f5d; }
+    background: #5f3f5d;
+    color: #fefefe; }
     table thead tr,
     table tfoot tr {
       background: transparent; }
@@ -3295,7 +3295,7 @@ table {
       font-weight: bold;
       text-align: left; }
   table tbody tr:nth-child(even) {
-    background-color: #f1f1f1; }
+    background-color: rgba(13, 13, 13, 0); }
   table tbody th,
   table tbody td {
     padding: 0.5rem 0.625rem 0.625rem; }
@@ -3318,10 +3318,10 @@ table.scroll {
   overflow-x: auto; }
 
 table.hover tr:hover {
-  background-color: #f9f9f9; }
+  background-color: transparent; }
 
 table.hover tr:nth-of-type(even):hover {
-  background-color: #ececec; }
+  background-color: transparent; }
 
 .table-scroll {
   overflow-x: auto; }
@@ -3988,3 +3988,105 @@ main.content, article.one-column {
 
 .two-column .medium-8 {
   background-color: #F3E1F2; }
+
+.shadow {
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.5);
+  max-width: 75rem;
+  margin: 0 auto 2rem auto; }
+
+.errors {
+  color: #ec5840; }
+
+.badge.accent {
+  margin-left: 0.5rem;
+  margin-top: 2px;
+  font-weight: bold; }
+
+.account {
+  vertical-align: top; }
+  .account th {
+    vertical-align: top;
+    text-align: left;
+    padding-left: 0; }
+
+@media screen and (max-width: 47.4375em) {
+  label.middle {
+    margin: 0;
+    padding: 0; } }
+
+.fancybox-overlay {
+  background-image: none;
+  background-color: rgba(95, 63, 93, 0.8); }
+
+.fancybox-skin {
+  background-color: #fefefe;
+  border-radius: 0;
+  padding: 0 !important;
+  box-shadow: 0 10px 25px black !important; }
+
+#fancybox-loading, .fancybox-close, .fancybox-prev span, .fancybox-next span {
+  background: none;
+  font-family: "FontAwesome";
+  color: #5f3f5d;
+  font-size: 3rem; }
+
+.fancybox-nav span {
+  visibility: visible;
+  opacity: 0.75; }
+
+.fancybox-nav:hover span {
+  opacity: 1; }
+
+.fancybox-prev span::after {
+  content: "\f053"; }
+
+.fancybox-next span::after {
+  content: "\f054"; }
+
+.hidden {
+  display: none; }
+
+body .flare {
+  background-color: #F3E1F2; }
+
+body .flare[data-flare-skin="modern"] .flare-total {
+  font-family: "Baloo Tamma", cursive !important; }
+
+body .flare[data-flare-skin="modern"] .flare-total > strong {
+  font-family: "Baloo Tamma", cursive !important; }
+
+.slick-prev, .slick-next {
+  width: auto;
+  height: auto;
+  z-index: 1; }
+
+.slick-prev {
+  left: 0; }
+
+.slick-next {
+  right: 0; }
+
+.slick-prev::before, .slick-next::before {
+  font-family: "FontAwesome";
+  color: #5f3f5d;
+  font-size: 3rem; }
+
+.slick-next::before {
+  content: "\f054"; }
+
+.slick-prev::before {
+  content: "\f053"; }
+
+.product-title-row {
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
+
+.stButton {
+  margin: 0 !important; }
+
+.share {
+  text-align: center; }
+  .share h3 {
+    margin-bottom: 0;
+    color: #d391cf; }

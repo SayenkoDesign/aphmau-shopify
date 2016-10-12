@@ -4,7 +4,7 @@
   {% assign on_sale = true %}
 {% endif %}
 
-<li class="{% unless product.available %} sold-out{% endunless %}{% if on_sale %} on-sale{% endif %}">
+<div class="{% unless product.available %} sold-out{% endunless %}{% if on_sale %} on-sale{% endif %} text-center">
 
   <a href="{{ product.url | within: collection }}">
     <img src="{{ product | img_url: 'grande' }}" alt="{{ product.featured_image.alt | escape }}" />
@@ -24,4 +24,4 @@
   {% endcomment %}
   <span class="shopify-product-reviews-badge" data-id="{{ product.id }}"></span>
   
-</li>
+</div>

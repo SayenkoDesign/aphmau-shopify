@@ -1,0 +1,27 @@
+    <h1>Create Account</h1>
+    {% form 'create_customer' %}
+        <div class="row">
+            <div class="small-6 columns">
+                <label for="first_name">First Name</label>
+                <input type="text" value="" name="customer[first_name]" size="30" />
+            </div>
+            <div class="small-6 columns">
+                <label for="last_name">Last Name</label>
+                <input type="text" value="" name="customer[last_name]" size="30" />
+            </div>
+            <div class="small-6 columns">
+                <label for="email">Email Address</label>
+                <input type="email" value="" name="customer[email]" size="30" />
+            </div>
+            <div class="small-6 columns"></div>
+            <div class="small-6 columns">
+                <label for="password">Password</label>
+                <input type="password" value="" name="customer[password]" size="30" />
+            </div>
+            <div class="small-6 columns"></div>
+            <div class="small-12 columns">
+                {{ form.errors | default_errors }}
+                <input type="submit" value="Create Account" class="button"/>
+            </div>
+        </div>
+    {% endform %}

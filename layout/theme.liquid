@@ -29,6 +29,9 @@
   {{ content_for_header }}
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  {{ 'jquery.fancybox.css' | asset_url | stylesheet_tag }}
+  {{ 'slick.css' | asset_url | stylesheet_tag }}
+  {{ 'slick-theme.css' | asset_url | stylesheet_tag }}
   {{ 'app.css' | asset_url | stylesheet_tag }}
 
   <!--[if lt IE 9]>
@@ -36,9 +39,7 @@
   <![endif]-->
 
   {{ 'shopify_common.js' | shopify_asset_url | script_tag }}
-  {% if template contains 'customers' %}  
     {{ 'customer_area.js'  | shopify_asset_url | script_tag }}
-  {% endif %}
   
   <!-- Additional Shopify helpers that will likely be added to the global shopify_common.js some day soon. -->
   {{ 'shopify_common.js'  | asset_url | script_tag }}
@@ -58,17 +59,19 @@
 
   <div class="spacer"></div>
 
-  <section class="content">
-    <div class="row small-collapse">
-      <div class="small-12 columns">
-        <main role="main" class="content">
-          {{ content_for_layout }}
-        </main>
+  <div class="shadow">
+    <section class="content">
+      <div class="row small-collapse">
+        <div class="small-12 columns">
+          <main role="main" class="content">
+            {{ content_for_layout }}
+          </main>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  {% include 'footer' %}
+    {% include 'footer' %}
+  </div>
 
   <!--
   <header>
@@ -105,6 +108,7 @@
   </footer>
 -->
   {{ 'shop.js'  | asset_url | script_tag }}
+  <script data-cfasync="false" type="text/javascript" src="//filamentapp.s3.amazonaws.com/8f395c05dd52d31c7420a3d2f929d0ab.js" async="async"></script>
 
 </body>
 

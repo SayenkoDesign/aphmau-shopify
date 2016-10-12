@@ -1,7 +1,92 @@
 {% comment %}
-  Very important reading:
-  http://docs.shopify.com/themes/liquid-basics/what-is-true-and-false-in-liquid
-  Learn how to read theme settings in your theme.
+Important notes about pagination:
+- Never access collections.all.products before the opening paginate tag.
+- Never paginate by more than 50.
 {% endcomment %}
 
-{{ page.content }}
+{% paginate collections.all.products by 10 %}
+
+<h1>{{ collections.all.title }}</h1>
+
+{% comment %}
+collections.all sorting. Needs the JavaScript that is at the bottom of this file.
+{% endcomment %}
+  {% if collections.all.products_count > 1 %}
+    <div class="row medium-centered large-centered">
+      <div class="small-12 medium-2 columns">
+        <label for="" class="middle">
+          Sort By:
+        </label>
+      </div>
+      <div class="small-12 medium-6 large-4  columns">
+        <select class="sort-by right">
+          <option value="manual">Featured</option>
+          <option value="price-ascending">Price: Low to High</option>
+          <option value="price-descending">Price: Hight to Low</option>
+          <option value="title-ascending">A-Z</option>
+          <option value="title-descending">Z-A</option>
+          <option value="created-ascending">Oldest to Newest</option>
+          <option value="created-descending">Newest to Oldest</option>
+          <option value="best-selling">Best Selling</option>
+        </select>
+      </div>
+    </div>
+  {% endif %}
+
+  {% comment %}
+Listing all tags within the current collections.all.
+Shopify uses product tags to manage subcategories inside collections.alls.
+See 'How do I create subcategories of products?' at
+http://bit.ly/1j1Dti4 for details.
+{% endcomment %}
+
+  {% if collections.all.all_tags.size > 0 %}
+    <ul>
+      <li class="{% unless current_tags %} active{% endunless %}">
+        {{ 'All' | link_to_remove_tag: current_tags.first }}
+      </li>
+      {% for tag in collections.all.all_tags %}
+        {% if current_tags contains tag %}
+          <li class="active">
+            {{ tag | link_to_remove_tag: tag }}
+          </li>
+        {% else %}
+          <li>
+            {{ tag | link_to_tag: tag }}
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  {% endif %}
+
+  {% if collections.all.description.size > 0 %}
+    {{ collections.all.description }}
+  {% endif %}
+
+<div class="row small-up-2 medium-up-3 large-up-4">
+  {% for product in collections.all.products %}
+    <div class="column">
+      {% include 'product-item' %}
+    </div>
+  {% else %}
+    <p>There are no products in this view.</p>
+  {% endfor %}
+</div>
+
+{% if paginate.pages > 1 %}
+  {{ paginate | default_pagination }}
+{% endif %}
+
+{% endpaginate %}
+
+{% comment %}
+JavaScript for collections.all sorting.
+{% endcomment %}
+<script>
+  jQuery('.sort-by')
+          .val('{{ collections.all.sort_by | default: collections.all.default_sort_by }}')
+          .on('change', function() {
+            Shopify.queryParams.sort_by = jQuery(this).val();
+            location.search = jQuery.param(Shopify.queryParams).replace(/\+/g, '%20');
+          });
+</script>

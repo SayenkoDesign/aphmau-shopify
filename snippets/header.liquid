@@ -1,3 +1,19 @@
+<header class="user-bar">
+    <div class="row column">
+        <ul class="horizontal menu">
+            {% if customer  %}
+                <li><a href="/account">My Account</a></li>
+                <li><a href="/cart">My Cart <span class="accent badge">{{ cart.item_count }}</span></a></li>
+                <li>{{ 'Log out' | customer_logout_link }}</li>
+            {% else %}
+                {% if shop.customer_accounts_optional %}
+                    <li>{{ 'Create an account' | customer_register_link }}</li>
+                {% endif %}
+                <li>{{ 'Log in' | customer_login_link }}</li>
+            {% endif %}
+        </ul>
+    </div>
+</header>
 <header data-sticky-container>
     <div class="top-bar" data-sticky data-top-anchor="150" data-sticky-on="small">
         <div id="large-menu" class="hide-for-small-only">

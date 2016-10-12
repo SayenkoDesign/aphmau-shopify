@@ -1,0 +1,64 @@
+<div class="row">
+    <div class="small-12 columns">
+        <h1>My Account</h1>
+    </div>
+    <div class="small-12 medium-6 large-8 columns">
+        <h2>Recent Orders</h2>
+        <div class="account-table right">
+            {% if customer.orders.size != 0 %}
+                <table>
+                    <thead>
+                    <tr class="cart-headers">
+                        <th>Order</th>
+                        <th>Date</th>
+                        <th>Payment Status</th>
+                        <th>Fulfillment Status</th>
+                        <th>Total</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for order in customer.orders %}
+                        <tr {% if order.cancelled %}class="cancelled_order"{% endif %}>
+                            <td>{{ order.name | link_to: order.customer_url }}</td>
+                            <td>{{ order.created_at | date: "%b %d, %Y" }}</td>
+                            <td>{{ order.financial_status }}</td>
+                            <td>{{ order.fulfillment_status }}</td>
+                            <td>{{ order.total_price | money }}</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            {% else %}
+                You haven't placed any orders yet.
+            {% endif %}
+        </div>
+    </div>
+    <div class="small-12 medium-6 large-4 columns">
+        <h2>Basic Info</h2>
+        <table class="account">
+            <tr>
+                <th>Name: </th><td>{{ customer.first_name }} {{ customer.last_name }}</td>
+            </tr>
+            <tr>
+                <th>Email: </th><td>{{ customer.email }}</td>
+            </tr>
+            <tr>
+                <th>Phone: </th><td>{% if customer.default_address %}{{ customer.default_address.phone }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Address: </th>
+                <td>
+                    {% if customer.default_address %}
+                            <p>{{ customer.default_address.address1 }}
+                            {% if customer.default_address.address2 != "" %}
+                                <br>{{ customer.default_address.address2 }}
+                            {% endif %}
+                            <br>{{ customer.default_address.city}}, {% if address.province_code %}{{ customer.default_address.province_code }}, {% endif %}{{ customer.default_address.province }}, {{ customer.default_address.zip }}
+                            </p>
+                    {% endif %}
+                </td>
+            </tr>
+        </table>
+        <a href="/account/addresses" class="button">Edit</a>
+    </div>
+</div>
