@@ -29,13 +29,13 @@ A word on sub-categories: Shopify manages sub-categories using product tags: htt
   <li>
     <a href="{{ link.url }}">
       {% if link.title == "forums" or link.title == "Forums" or link.title == "FORUMS" %}
-        <i class="fa fa-users"></i>
+        {{ "icon-forums.png" | asset_url | img_tag: shop.name }}
       {% elsif link.title == "shop" or link.title == "Shop" or link.title == "SHOP" %}
-        <i class="fa fa-briefcase"></i>
+        {{ "icon-shop.png" | asset_url | img_tag: shop.name }}
       {% elsif link.title == "gallery" or link.title == "Gallery" or link.title == "GALLERY" %}
-        <i class="fa fa-image"></i>
+        {{ "icon-comics.png" | asset_url | img_tag: shop.name }}
       {% elsif link.title == "videos" or link.title == "Videos" or link.title == "VIDEOS" %}
-        <i class="fa fa-play"></i>
+        {{ "icon-videos.png" | asset_url | img_tag: shop.name }}
       {% endif %}
       <span>{{ link.title }}</span>
     </a>

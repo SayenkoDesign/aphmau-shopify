@@ -41,6 +41,26 @@
         "max-height": 128
       },
       {
+        "type":       "image",
+        "id":         "icon-forums.png",
+        "label":      "Forums Icon"
+      },
+      {
+        "type":       "image",
+        "id":         "icon-shop.png",
+        "label":      "Shop Icon"
+      },
+      {
+        "type":       "image",
+        "id":         "icon-comics.png",
+        "label":      "Webcomics Icon"
+      },
+      {
+        "type":       "image",
+        "id":         "icon-videos.png",
+        "label":      "Videos Icon"
+      },
+      {
         "type":      "text",
         "id":        "facebook",
         "label":     "Facebook",
